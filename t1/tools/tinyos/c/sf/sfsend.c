@@ -14,7 +14,7 @@ void send_packet(int fd, char **bytes, int count)
     exit(2);
 
   for (i = 0; i < count; i++)
-    packet[i] = strtol(bytes[i], NULL, 0);
+    packet[i] = strtol(bytes[i], NULL, 16);
       
   fprintf(stderr,"Sending ");
   for (i = 0; i < count; i++)

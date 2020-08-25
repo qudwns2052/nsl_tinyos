@@ -56,6 +56,13 @@ implementation {
   components RPLDAORoutingEngineC;
   components IPStackC;
   components IPProtocolsP;
+  components SerialActiveMessageC as AM;
+
+
+  App.Receive -> AM.Receive[AM_TEST_SERIAL_MSG];
+  App.AMSend -> AM.AMSend[AM_TEST_SERIAL_MSG];
+  App.Packet -> AM;
+
 
   App.Boot -> MainC.Boot;
   App.SplitControl -> IPStackC;//IPDispatchC;
@@ -67,7 +74,6 @@ implementation {
 
   components new UdpSocketC() as RPLUDP;
   App.RPLUDP -> RPLUDP;
-
   App.RPLDAO -> RPLDAORoutingEngineC;
   App.Timer -> Timer;
   App.Random -> RandomC;

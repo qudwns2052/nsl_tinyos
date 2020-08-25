@@ -61,13 +61,19 @@ module TestRPLC @safe() {
     //interface RPLForwardingEngine;
     interface RPLDAORoutingEngine as RPLDAO;
     interface Random;
-
-
     //interface Lcd;
     //interface Draw;
+
+
+    interface Receive;
+    interface AMSend;
+    interface Packet;
+
   }
 }
+
 implementation {
+
 
 #ifndef RPL_ROOT_ADDR
 #define RPL_ROOT_ADDR 1
@@ -75,9 +81,12 @@ implementation {
 
 #define UDP_PORT 5678
 
-  //uint8_t payload[10];
+   message_t packet;
+    
+    //uint8_t payload[10];
   //struct in6_addr dest;
   struct in6_addr MULTICAST_ADDR;
+
 
   bool locked;
   uint16_t counter = 0;
@@ -88,6 +97,7 @@ implementation {
     MULTICAST_ADDR.s6_addr[1] = 0x2;
     MULTICAST_ADDR.s6_addr[15] = 0x1A;
 
+    
     //call Lcd.initialize();
 
     if(TOS_NODE_ID == RPL_ROOT_ADDR){
@@ -121,15 +131,96 @@ implementation {
 
   uint32_t countrx = 0;
   uint32_t counttx = 0;
+  uint8_t sendstate = 1;
+
+
+    event message_t* Receive.receive(message_t* bufPtr,
+				   void* payload, uint8_t len) {
+    if (len != sizeof(test_serial_msg_t)) {return bufPtr;}
+    else {
+
+        test_serial_msg_t* rcm = (test_serial_msg_t*)payload;
+        nx_uint16_t temp[10];
+        uint8_t i;
+        struct sockaddr_in6 dest;
+
+        for(i=0;i<10;i++){
+            temp[i] = 0xABCD;
+        }
+
+
+        temp[0] = TOS_NODE_ID;
+        temp[9] = rcm->counter;
+
+
+        memcpy(dest.sin6_addr.s6_addr, MULTICAST_ADDR.s6_addr, sizeof(struct in6_addr));
+
+//    if(dest.sin6_addr.s6_addr[15] != 0) // destination is set as root!
+//      ++counttx;
+
+  
+        call Leds.led0Toggle();
+
+    
+        dest.sin6_port = htons(UDP_PORT);
+        printf("Serial Command. it is %d\n", temp[9]);
+        printfflush();
+        
+        call RPLUDP.sendto(&dest, temp, 20);
+        return bufPtr;
+    }
+  }
+
+/*   event message_t* Receive.receive(message_t* bufPtr,
+				   void* payload, uint8_t len) {
+      test_serial_msg_t* rcm = (test_serial_msg_t*)payload;
+  
+      call Leds.led1Toggle();
+
+      printf(">>>> Serial \n");
+
+      return bufPtr;
+  }
+*/
+  event void AMSend.sendDone(message_t* bufPtr, error_t error) {
+    if (&packet == bufPtr) {
+      locked = FALSE;
+    }
+  }
+
 
   event void RPLUDP.recvfrom(struct sockaddr_in6 *from, void *payload, uint16_t len, struct ip6_metadata *meta){
 
     nx_uint16_t temp[10];
     memcpy(temp, (uint8_t*)payload, len);
     call Leds.led2Toggle();
-    
-    printf(">>>> RX %d %d %d %lu \n", TOS_NODE_ID, temp[0], temp[9], ++countrx);
-    printfflush();
+   
+           if(TOS_NODE_ID != 1)
+        {
+
+            if (sendstate == 1)
+            {
+                call MilliTimer.stop();
+                sendstate = 0;
+                printf("Timer Stop\n");
+                printfflush();
+            }
+            else
+            {
+                call MilliTimer.startOneShot(PACKET_INTERVAL + (call Random.rand16() % 100));
+                sendstate = 1;
+                printf("Timer Start\n");
+                printfflush();
+            }
+            return;
+        }
+
+
+    if(temp[9] % 2 == 0)
+    {
+        printf(">>>> RX %d %d %d %lu \n", TOS_NODE_ID, temp[0], temp[9], ++countrx);
+        printfflush();
+    }
   }
   
   event void SplitControl.startDone(error_t err){
@@ -185,5 +276,6 @@ implementation {
   }
 
   event void SplitControl.stopDone(error_t err){}
+
 
 }
