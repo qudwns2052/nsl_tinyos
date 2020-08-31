@@ -37,6 +37,7 @@ command_name	command_byte
 Timer stop	00
 Timer start	01
 get parent	02
+get Rank    03
 quit		    q
 
 8. TestRPL_mysend
@@ -45,4 +46,5 @@ quit		    q
 Timer stop : Timer 멈춤
 Timer start : Timer 시작
 get parent : parent 정보를 담아서 root에 UDP 전송
+get Rank : Rank 정보를 담아서 root에 UDP 
 
