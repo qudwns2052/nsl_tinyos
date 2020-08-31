@@ -49,6 +49,7 @@ int main(int argc, char **argv)
   printf("Timer stop\t00\n");
   printf("Timer start\t01\n");
   printf("get parent\t02\n");
+  printf("get Rank\t03\n");
   printf("\nquit\t\tq\n\n");
 
 
