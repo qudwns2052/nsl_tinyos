@@ -31,12 +31,18 @@ multihop의 경우, Depth가 2일 때 root로부터 한번에 받지 못함 -> �
 
 7. mysend.c
 
-sfsend를 변형 -> while로 1byte씩 받아서 전송 -> command는 TestRPL에 구현이 되어 있음
+sfsend를 변형 -> while로 1byte씩 받아서 전송 -> command는 TestRPL_mysend에 구현이 되어 있음
 
 command_name	command_byte
 Timer stop	00
 Timer start	01
 get parent	02
-
 quit		    q
+
+8. TestRPL_mysend
+
+기존의 경우, root가 serial을 receive 했는데, 이제 node가 serial을 receive 하고, 이에 맞는 명령을 수행함
+Timer stop : Timer 멈춤
+Timer start : Timer 시작
+get parent : parent 정보를 담아서 root에 UDP 전송
 
