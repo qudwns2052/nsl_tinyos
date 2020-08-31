@@ -28,3 +28,15 @@ sfsend의 형식을 id command로 변환 -> node가 0이면 all / 0이 아니면
 6. TestRPL_sfsend_forwarding
 
 multihop의 경우, Depth가 2일 때 root로부터 한번에 받지 못함 -> 이 경우, Depth 1이 forwarding을 해주는 기능 추가
+
+7. mysend.c
+
+sfsend를 변형 -> while로 1byte씩 받아서 전송 -> command는 TestRPL에 구현이 되어 있음
+
+command_name	command_byte
+Timer stop	00
+Timer start	01
+get parent	02
+
+quit		    q
+
