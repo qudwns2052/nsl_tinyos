@@ -4,21 +4,22 @@
 #include <string.h>
 #include "sfsource.h"
 
-void send_packet(int fd, char *byte)
+void send_packet(int fd, unsigned char byte[2][3])
 {
   int i;
   unsigned char *packet;
 
-  unsigned char header[9][3] = {"00","ff","ff","00","00","02","00","89", "00"};
+  unsigned char header[9][3] = {"00","ff","ff","00","00","02","00","89"};
 
   packet = malloc(10);
   if (!packet)
     exit(2);
 
-  for (i = 0; i < 9; i++)
+  for (i = 0; i < 8; i++)
     packet[i] = strtol(header[i], NULL, 16);
       
-  packet[i] = strtol(byte, NULL, 16);
+  for (i = 0; i < 2; i++)
+      packet[i+8] = strtol(byte[i], NULL, 16);
 
   fprintf(stderr,"Sending ");
   for (i = 0; i < 10; i++)
@@ -47,18 +48,20 @@ int main(int argc, char **argv)
 
   printf("command_name\tcommand_byte\n");
   printf("Timer stop\t00\n");
-  printf("Timer start\t01\n");
+  printf("Timer start\t01 time_interval\n");
   printf("get parent\t02\n");
   printf("get Rank\t03\n");
   printf("\nquit\t\tq\n\n");
 
 
-  unsigned char byte[10];
-  
+  unsigned char byte[2][3];
   while (1)
   {
-      scanf("%s", byte);
-      if(!strcmp(byte,"q"))
+      scanf("%s", byte[0]);
+      if(!strcmp(byte[0], "01"))
+          scanf("%s", byte[1]);
+
+      if(!strcmp(byte[0],"q"))
               break;
 
       send_packet(fd, byte);

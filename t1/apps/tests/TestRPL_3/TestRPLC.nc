@@ -81,15 +81,15 @@ implementation {
 
 #define UDP_PORT 5678
 
-   message_t packet;
-    
-    //uint8_t payload[10];
-  //struct in6_addr dest;
+
+  message_t packet;
   struct in6_addr MULTICAST_ADDR;
   struct in6_addr DEFAULT_ADDR;
 
   bool locked;
   uint16_t counter = 0;
+
+  unsigned long INTERVAL = PACKET_INTERVAL;
   
   event void Boot.booted() {
     memset(MULTICAST_ADDR.s6_addr, 0, 16);
@@ -144,7 +144,7 @@ implementation {
             temp[i] = 0xABCD;
         }
 
-        switch(msg->data)
+        switch(msg->data1)
         {
             case 0:
                 call MilliTimer.stop();
@@ -152,14 +152,16 @@ implementation {
                 printfflush();
                 break;
             case 1:
-                call MilliTimer.startOneShot(PACKET_INTERVAL + (call Random.rand16() % 100));
-                printf("Timer Start\n");
+                INTERVAL = msg->data2 * 1024UL;
+
+                call MilliTimer.startOneShot(INTERVAL + (call Random.rand16() % 100));
+                printf("Timer Start : Interval = %d\n", INTERVAL);
                 printfflush();
                 break;
             case 2:
                 call RPLRoute.getDefaultRoute(&parent);
                 temp[0] = TOS_NODE_ID;
-                temp[8] = msg->data;
+                temp[8] = msg->data1;
                 temp[9] = parent.s6_addr[15];
                 dest.sin6_port = htons(UDP_PORT);
 
@@ -171,7 +173,7 @@ implementation {
             case 3:
                 temp[9] = call RPLRoute.getRank();
                 temp[0] = TOS_NODE_ID;
-                temp[8] = msg->data;
+                temp[8] = msg->data1;
                 dest.sin6_port = htons(UDP_PORT);
 
                 printf("Send Rank info\n");
@@ -235,7 +237,7 @@ implementation {
   }
 
   event void Timer.fired(){
-    call MilliTimer.startOneShot(PACKET_INTERVAL + (call Random.rand16() % 100));
+    call MilliTimer.startOneShot(INTERVAL + (call Random.rand16() % 100));
   }
 
   task void sendTask(){
@@ -267,7 +269,7 @@ implementation {
 
   event void MilliTimer.fired(){
     //call Leds.led1Toggle();
-    call MilliTimer.startOneShot(PACKET_INTERVAL + (call Random.rand16() % 100));
+    call MilliTimer.startOneShot(INTERVAL + (call Random.rand16() % 100));
     post sendTask();
   }
 

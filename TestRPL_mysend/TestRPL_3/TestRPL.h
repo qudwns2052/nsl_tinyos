@@ -2,8 +2,8 @@
 #define TEST_RPL_H
 
 typedef nx_struct serial_msg {
-  nx_uint8_t id;
-  nx_uint8_t data;
+  nx_uint8_t data1;
+  nx_uint8_t data2;
 } serial_msg_t;
 typedef nx_struct test_serial_msg {
   nx_uint16_t counter;
