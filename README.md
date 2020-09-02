@@ -54,3 +54,17 @@ mysend2 :Timer start 01 time_interval (사용자가 원하는 시간으로 Timer
 TestRPL_mysend : serial_msg_t 구조체 변경 (id, data -> data1, data2) / INTERVAL을 사용자가 전달한 값으로 변경할 수 있도록 함
 
 
+해야 할 일
+
+routing table 보는 것 찾기
+
+DAO, DIO 확인하는 방법 찾기
+
+AMSend에서 아래 layer 잡는 방법 찾기
+
+수신율 체크 (1000개 보냈을 때 몇개 오는지 / 계층 별로)
+
+RTT 체크
+
+ETS 체크 (계층 별로)
+
