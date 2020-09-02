@@ -48,3 +48,9 @@ Timer start : Timer 시작
 get parent : parent 정보를 담아서 root에 UDP 전송
 get Rank : Rank 정보를 담아서 root에 UDP 
 
+9. mysend2.c TestRPL_mysend 변경
+
+mysend2 :Timer start 01 time_interval (사용자가 원하는 시간으로 Timer를 튀길 수 있도록 변경)
+TestRPL_mysend : serial_msg_t 구조체 변경 (id, data -> data1, data2) / INTERVAL을 사용자가 전달한 값으로 변경할 수 있도록 함
+
+
