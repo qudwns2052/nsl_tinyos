@@ -66,5 +66,5 @@ AMSend에서 아래 layer 잡는 방법 찾기
 
 RTT 체크
 
-ETS 체크 (계층 별로)
+ETX 체크 (계층 별로)
 
