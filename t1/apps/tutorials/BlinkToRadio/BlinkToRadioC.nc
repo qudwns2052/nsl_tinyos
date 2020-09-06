@@ -107,6 +107,7 @@ implementation {
       }
       btrpkt->nodeid = TOS_NODE_ID;
       btrpkt->counter = counter;
+      call Leds.led0Toggle();
       if (call AMSend.send(AM_BROADCAST_ADDR, 
           &pkt, sizeof(BlinkToRadioMsg)) == SUCCESS) {
         busy = TRUE;
