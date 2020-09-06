@@ -58,18 +58,16 @@ TestRPL_mysend : serial_msg_t 구조체 변경 (id, data -> data1, data2) / INTE
 
 AMReceive가 해결이 잘 안됨. 아래 layer 잡는 방법 찾기
 
+DAO -> RPLDAORoutingEngineP.nc:  task void sendDAO();
+DIO -> RPLRoutingEngineP.nc:  task void sendDIOTask();
 
 해야 할 일
 
-routing table 보는 것 찾기
 
-DAO, DIO 확인하는 방법 찾기
-
-10번 해결
+routing table 확인하는 법 찾기
+10번 해결하기
 
 수신율 체크 (1000개 보냈을 때 몇개 오는지 / 계층 별로)
-
 RTT 체크
-
 ETX 체크 (계층 별로)
 
