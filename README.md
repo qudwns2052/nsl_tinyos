@@ -33,24 +33,15 @@ multihop의 경우, Depth가 2일 때 root로부터 한번에 받지 못함 -> �
 
 sfsend를 변형 -> while로 1byte씩 받아서 전송 -> command는 TestRPL_mysend에 구현이 되어 있음
 
-command_name	command_byte
-Timer stop	00
-Timer start	01
-get parent	02
-get Rank    03
-quit		    q
 
 8. TestRPL_mysend
 
 기존의 경우, root가 serial을 receive 했는데, 이제 node가 serial을 receive 하고, 이에 맞는 명령을 수행함
-Timer stop : Timer 멈춤
-Timer start : Timer 시작
-get parent : parent 정보를 담아서 root에 UDP 전송
-get Rank : Rank 정보를 담아서 root에 UDP 
 
 9. mysend2.c TestRPL_mysend 변경
 
 mysend2 :Timer start 01 time_interval (사용자가 원하는 시간으로 Timer를 튀길 수 있도록 변경)
+
 TestRPL_mysend : serial_msg_t 구조체 변경 (id, data -> data1, data2) / INTERVAL을 사용자가 전달한 값으로 변경할 수 있도록 함
 
 
@@ -58,16 +49,25 @@ TestRPL_mysend : serial_msg_t 구조체 변경 (id, data -> data1, data2) / INTE
 
 AMReceive가 해결이 잘 안됨. 아래 layer 잡는 방법 찾기
 
+
+
 DAO -> RPLDAORoutingEngineP.nc:  task void sendDAO();
+
 DIO -> RPLRoutingEngineP.nc:  task void sendDIOTask();
+
+
+
 
 해야 할 일
 
 
 routing table 확인하는 법 찾기
+
 10번 해결하기
 
 수신율 체크 (1000개 보냈을 때 몇개 오는지 / 계층 별로)
+
 RTT 체크
+
 ETX 체크 (계층 별로)
 
