@@ -56,12 +56,12 @@ DAO -> RPLDAORoutingEngineP.nc:  task void sendDAO();
 DIO -> RPLRoutingEngineP.nc:  task void sendDIOTask();
 
 
+routing table -> IPForwardingEngineP.nc:  command struct route_entry *ForwardingTable.getTable(int *n)
 
 
 해야 할 일
 
-
-routing table 확인하는 법 찾기
+root에서 아래로 쏘기 (ipv6이용)
 
 10번 해결하기
 
