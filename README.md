@@ -55,13 +55,11 @@ DAO -> RPLDAORoutingEngineP.nc:  task void sendDAO();
 
 DIO -> RPLRoutingEngineP.nc:  task void sendDIOTask();
 
-
 routing table -> IPForwardingEngineP.nc:  command struct route_entry *ForwardingTable.getTable(int *n)
 
+root에서 아래 node로 UDP send -> 중간 hop routing table 추가됐는지 확인
 
 해야 할 일
-
-root에서 아래로 쏘기 (ipv6이용)
 
 10번 해결하기
 
