@@ -1,0 +1,1000 @@
+  741  cat TestSerialC.nc 
+  742  vim TestSerialC.nc 
+  743  make telosb
+  744  make telosb install.1 bsl,/dev/ttyUSB1
+  745  vim TestSerialC.nc 
+  746  ls
+  747  make telosb
+  748  make telosb install.1 bsl,/dev/ttyUSB1
+  749  ls
+  750  cat TestSerialC.nc 
+  751  vim TestSerialC.nc 
+  752  ls
+  753  vim TestSerial.h
+  754  ls
+  755  vim TestSerialC.nc 
+  756  ls
+  757  cat TestSerial.h
+  758  vim TestSerial.h
+  759  make telosb
+  760  make telosb install.1 bsl,/dev/ttyUSB1
+  761  cd ..
+  762  ls
+  763  cd ..
+  764  ls
+  765  su
+  766  ls
+  767  ./sf
+  768  ./sf 9001 /dev/ttyUSB0 115200
+  769  cd ..
+  770  cd apps/BaseStation
+  771  ls
+  772  cat BaseStationC.nc 
+  773  ls
+  774  cat BaseStationC.nc 
+  775  ls
+  776  cat Makefile 
+  777  cat BaseStationC.nc 
+  778  cd ..
+  779  ls
+  780  cd ..
+  781  cd tests
+  782  ls
+  783  cd apps/
+  784  ls
+  785  cd BlinkToRadio/
+  786  ls
+  787  mousepad BlinkToRadioC.nc 
+  788  cd ..
+  789  ls
+  790  cd BaseStation
+  791  ls
+  792  cat BaseStationC.nc > 2.txt
+  793  mousepad 2.txt 
+  794  cd /home/goka/nsl/tinyos-main/tools/tinyos/c/sf
+  795  ls
+  796  ./sf-send
+  797  ./sf-send localhost 9000 01
+  798  ./sf-send localhost 9000 01 02 03
+  799  ./sf-send localhost 9000 1
+  800  ./sf-send localhost 9000 2
+  801  ./sf-send localhost 9000 f
+  802  ./sf-send localhost 9000 ff
+  803  ls
+  804  cat sfsend.c
+  805  ./sf-send localhost 9000 1
+  806  ./sf-send 8.8.8.8 9000 1
+  807  ./sf-send localhost 9000
+  808  ./sf-send localhost 9000 1
+  809  ./sf-send localhost 9000 2
+  810  ./sf-send localhost 9000 1
+  811  ./sf-send localhost 9000 2
+  812  ./sf-send localhost 9000 3
+  813  ./sf-send localhost 9000 00 FF FF 00 00 00 01
+  814  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06
+  815  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 01
+  816  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 01 00 0B
+  817  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 0B
+  818  ./sf-send localhost 9000 1
+  819  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 01
+  820  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 02
+  821  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 03
+  822  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 04
+  823  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 05
+  824  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 04
+  825  ./sf-send localhost 9000 1
+  826  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 01
+  827  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 02
+  828  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 03
+  829  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 04
+  830  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 05
+  831  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 06
+  832  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 07
+  833  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 08
+  834  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 09
+  835  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 00
+  836  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 01
+  837  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 02
+  838  ./sf-send localhost 9000 01
+  839  ./sf-send localhost 9000 02
+  840  ./sf-send localhost 9000 03
+  841  ./sf-send localhost 9000 01
+  842  ./sf-send localhost 9000 02
+  843  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 01
+  844  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 02
+  845  cat sfsend.c
+  846  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 02
+  847  ./sf-send localhost 9000 1
+  848  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 02
+  849  ./sf-send localhost 9000 00 01
+  850  ./sf-send localhost 9000 01 00
+  851  ./sf-send localhost 9000 00 00 01
+  852  ./sf-send localhost 9000 00 01 10
+  853  ./sf-send localhost 9000 12 34
+  854  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 02
+  855  ./sf-send localhost 9000 1
+  856  ./sf-send
+  857  ./sf-send localhost 9000 01
+  858  ./sf-send localhost 9000 0101
+  859  ./sf-send localhost 9000 01 01
+  860  ./sf-send localhost 9000 01
+  861  ./sf-send localhost 9000 01 02
+  862  ./sf-send localhost 9000 00 01
+  863  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 01
+  864  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 02
+  865  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 03
+  866  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 01
+  867  ./sf-send localhost 9000 1
+  868  ./sf-send localhost 9000 01
+  869  ./sf-send localhost 9000 00 01
+  870  ./sf-send localhost 9000 00 02
+  871  ./sf-send localhost 9000 00 03
+  872  cat sfsend.c
+  873  cat sfsource.h
+  874  ls
+  875  ./sf-send localhost 9000 00
+  876  ./sf-send localhost 9000 00 00
+  877  ./sf-send localhost 9000 00 01
+  878  ./sf-send localhost 9000 00 02
+  879  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 01
+  880  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 10 01
+  881  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 00
+  882  ./sf-send localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 01
+  883  ls
+  884  make
+  885  ls
+  886  make clean
+  887  make
+  888  ls
+  889  ./sf-serialsend 
+  890  ./sf-serialsend /dev/ttyUSB1 115200 00 01
+  891  ./sf-serialsend /dev/ttyUSB1 115200 00 02
+  892  ./sf-serialsend /dev/ttyUSB0 115200 00 02
+  893  ./sf-serialsend /dev/ttyUSB1 115200 00 02
+  894  ./sf-serialsend /dev/ttyUSB1 115200 00 01
+  895  ls
+  896  ./sf-seriallisten 
+  897  ./sf-seriallisten /dev/ttyUSB1 11520
+  898  ./sf-seriallisten /dev/ttyUSB1 115200
+  899  ./sf-serialsend /dev/ttyUSB1 115200 00 ff ff 00 00 02 00 89 01 01
+  900  ./sf-serialsend /dev/ttyUSB1 115200 00 FF FF  00 00 02 00 89 01 01
+  901  ./sf-serialsend /dev/ttyUSB1 115200 00 FF FF
+  902  ./sf-serialsend /dev/ttyUSB1 115200 00 11
+  903  ./sf-serialsend /dev/ttyUSB1 115200 11
+  904  ./sf-serialsend /dev/ttyUSB1 115200 13
+  905  ./sf-serialsend /dev/ttyUSB1 115200 16
+  906  ./sf-seriallisten /dev/ttyUSB1 115200
+  907  ./sf-send
+  908  ./sf-send localhost 9000 01
+  909  ./sf-send localhost 9000 01 01
+  910  ./sf-send localhost 9000 01 02
+  911  ./sf-serialsend /dev/ttyUSB1 115200 1
+  912  ./sf-serialsend /dev/ttyUSB1 115200 2
+  913  ./sf-serialsend /dev/ttyUSB1 115200 3
+  914  ./sf-serialsend /dev/ttyUSB1 115200 00 ff ff 00
+  915  ./sf-serialsend /dev/ttyUSB1 115200 1
+  916  ./sf-send localhost 9000 01 01
+  917  ./sf-send localhost 9000 0101
+  918  ./sf-send localhost 9000 5
+  919  ./sf-send localhost 9000 100
+  920  ./sf-send localhost 9000 12
+  921  ./sf-serialsend /dev/ttyUSB1 115200 1
+  922  ./sf-serialsend /dev/ttyUSB1 115200 00 ff
+  923  ./sf-serialsend /dev/ttyUSB1 115200 00 ff ff 00
+  924  ./sf-serialsend /dev/ttyUSB1 115200 00 ff ff 00 00 02
+  925  ./sf-serialsend /dev/ttyUSB1 115200 00 ff ff 00 00 02 00 89
+  926  ./sf-serialsend /dev/ttyUSB1 115200 00 ff ff 00 00 02 00 89 00 09
+  927  ./sf-listen
+  928  ./sf-listen localhost 9000
+  929  ./sf-listen localhost 9001
+  930  cd ..
+  931  ls
+  932  cd apps/
+  933  ls
+  934  cd tests/
+  935  ls
+  936  cd TestSerial
+  937  ls
+  938  mousepad TestSerialC.nc 
+  939  cd ..
+  940  ls
+  941  rm -r bj2
+  942  rm -r bj3
+  943  cp ../BaseStation bj2
+  944  cp -r ../BaseStation bj2
+  945  ls
+  946  cd bj2
+  947  ls
+  948  cat BaseStationC.nc 
+  949  cd ..
+  950  ls
+  951  rm -r bj2
+  952  cp -r ../BlinkToRadio/ bj2
+  953  cd bj2/
+  954  ls
+  955  mouspad BlinkToRadioAppC.nc 
+  956  mousepad BlinkToRadioAppC.nc 
+  957  cd ..
+  958  ls
+  959  cd bj1
+  960  ls
+  961  cat TestSerialC.nc 
+  962  mouspad TestSerialC.nc 
+  963  mousepad TestSerialC.nc 
+  964  make telosb
+  965  motelist
+  966  make telosb install.1 bsl,/dev/ttyUSB0
+  967  cat TestSerialC.nc 
+  968  ls
+  969  cat TestSerialC.nc 
+  970  mousepad TestSerialC.nc 
+  971  mousepad
+  972  ls
+  973  mousepad TestSerialAppC.nc 
+  974  nautilus .
+  975  ls
+  976  make telosb
+  977  motelist
+  978  make telosb install.1 bsl,/dev/ttyUSB0
+  979  ls
+  980  cat TestSerialC.nc 
+  981  nautil .
+  982  nautilus .
+  983  ls
+  984  make telosb
+  985  mouspad TestSerialC.nc 
+  986  mousepad TestSerialC.nc 
+  987  make telosb
+  988  make telosb install./ bsl,/dev/ttyUSB0
+  989  make telosb install.1 bsl,/dev/ttyUSB0
+  990  cat TestSerialC.nc 
+  991  cd ..
+  992  ls
+  993  cd ..
+  994  ls
+  995  cd BaseStation
+  996  ls
+  997  make telosb
+  998  motelist
+  999  make telosb install.2/dev/ttyUSB1
+ 1000  make telosb install.2 bsl,/dev/ttyUSB1
+ 1001  ls
+ 1002  cat BaseStationP.nc 
+ 1003  ls
+ 1004  mousepad BaseStationP.nc 
+ 1005  history
+ 1006  natuilus .
+ 1007  nautilus .
+ 1008  ls
+ 1009  cd ..
+ 1010  ls
+ 1011  cd BlinkToRadio/
+ 1012  nautilus .
+ 1013  cd nsl/tinyos-main/
+ 1014  ls
+ 1015  cd apps/
+ 1016  ls
+ 1017  cd BaseStation
+ 1018  ls
+ 1019  cat BaseStationC.nc 
+ 1020  cd nsl/tinyos-
+ 1021  cd nsl/tinyos-main/apps/
+ 1022  ls
+ 1023  cd BlinkToRadio/
+ 1024  ls
+ 1025  cat BlinkToRadioAppC.nc 
+ 1026  cd ..
+ 1027  cd tests/
+ 1028  cd TestS
+ 1029  cd TestSerial
+ 1030  ls
+ 1031  cat TestSerialAppC.nc 
+ 1032  cd ..
+ 1033  cd bj2
+ 1034  ls
+ 1035  cat TestSerialAppC.nc 
+ 1036  c d..
+ 1037  cd ..
+ 1038  ls
+ 1039  cd ..
+ 1040  cd BaseStation
+ 1041  ls
+ 1042  cat BaseStationC.nc 
+ 1043  cat BaseStationP.nc 
+ 1044  cd ..
+ 1045  ls
+ 1046  cd BlinkToRadio/
+ 1047  ls
+ 1048  cat BlinkToRadioC.nc 
+ 1049  cd ..
+ 1050  cd tests/
+ 1051  cd TestSerial
+ 1052  ls
+ 1053  cat TestSerialC.nc 
+ 1054  cd ..
+ 1055  ls
+ 1056  cd ..
+ 1057  ls
+ 1058  cd BlinkToRadio/
+ 1059  ls
+ 1060  cat BlinkToRadioC.nc 
+ 1061  cd ..
+ 1062  ls
+ 1063  cd tests/TestSerial
+ 1064  cat TestSerialC
+ 1065  cat TestSerialC.nc 
+ 1066  cd ..
+ 1067  ls
+ 1068  cd BlinkToRadio/
+ 1069  ls
+ 1070  cat BlinkToRadioC.nc 
+ 1071  cd nsl
+ 1072  ls
+ 1073  cd tinyos-main/
+ 1074  ls
+ 1075  cd apps/
+ 1076  ls
+ 1077  cd ..
+ 1078  find . -name sf
+ 1079  cd /tools/tinyos/c/sf
+ 1080  cd tools/tinyos/c/sf
+ 1081  ls
+ 1082  cat sfsend.c
+ 1083  ls
+ 1084  ./sf
+ 1085  ./sf 9000 /dev/ttyUSB0 115200
+ 1086  ./sf 9000 /dev/ttyUSB1 115200
+ 1087  ./sf 9000 /dev/ttyUSB0 115200
+ 1088  ./sf 9000 /dev/ttyUSB1 115200
+ 1089  ./sf 9000 /dev/ttyUSB0 115200
+ 1090  ./sf
+ 1091  ./sf 9000 /dev/ttyUSB0123 115200
+ 1092  ./sf 9000 /dev/ttyUSB01 115200
+ 1093  ./sf 9000 /dev/ttyUSB1 115200
+ 1094  ./sf 9000 /dev/ttyUSB0 115200
+ 1095  ./sf 9000 /dev/ttyUSB1 115200
+ 1096  ./sf 9000 /dev/ttyUSB0 115200
+ 1097  ./sf 9000 /dev/ttyUSB1 115200
+ 1098  ./sf 9000 /dev/ttyUSB0 115200
+ 1099  ./sf 9000 /dev/ttyUSB1 115200
+ 1100  ./sf-listen
+ 1101  ./sf-listen localhost 9000
+ 1102  ./sf-send localhost 9000 0
+ 1103  ./sf-send localhost 9000 00  ff  ff  00  00  04  00  89  00  01  02  03  04
+ 1104  ./sf-send localhost 9000 0
+ 1105  cd ..
+ 1106  ls
+ 1107  cd apps/
+ 1108  ls
+ 1109  cd BlinkToRadio/
+ 1110  ls
+ 1111  cat BlinkToRadioC.nc 
+ 1112  cat BlinkToRadioAppC.nc 
+ 1113  cat BlinkToRadioC.nc 
+ 1114  cd nsl
+ 1115  cd tinyos-main/
+ 1116  ls
+ 1117  cd apps/
+ 1118  ls
+ 1119  cd tests/
+ 1120  ls
+ 1121  cd ..
+ 1122  cd BaseStation
+ 1123  ls
+ 1124  cat BaseStationC
+ 1125  cat BaseStationC.nc 
+ 1126  cat BaseStationP.nc 
+ 1127  cat BaseStationC.nc 
+ 1128  cd ../../../
+ 1129  ls
+ 1130  cd ..
+ 1131  ls
+ 1132  cd tos/
+ 1133  ls
+ 1134  cd lib/
+ 1135  ls
+ 1136  cd net/
+ 1137  ls
+ 1138  cd blip/
+ 1139  ls
+ 1140  cd ..
+ 1141  ls
+ 1142  cd 6lowpan/
+ 1143  ls
+ 1144  cd ..
+ 1145  ls
+ 1146  cd blip
+ 1147  ls
+ 1148  cat blip_printf.h 
+ 1149  ls
+ 1150  cp blip_printf.h blip_printf2.h
+ 1151  vim blip_printf.h
+ 1152  ls
+ 1153  cp blip_printf2.c blip_printf.c
+ 1154  ls
+ 1155  cp blip_printf2.h blip_printf.h
+ 1156  ls
+ 1157  cd ..
+ 1158  ls
+ 1159  cd lib/
+ 1160  ls
+ 1161  grep printf
+ 1162  grep printf 2> /dev/null
+ 1163  grep -rn printf 2> /dev/null
+ 1164  ls
+ 1165  cp lib lib_origin
+ 1166  cp -r lib lib_origin
+ 1167  cd ..
+ 1168  ls
+ 1169  cp -r lib lib_origin
+ 1170  cd lib
+ 1171  grep -rn printf( * 2> /dev/null
+ 1172  grep -rn "printf(" * 2> /dev/null
+ 1173  grep -rn "printf(\"" * 2> /dev/null
+ 1174  ls
+ 1175  grep -rn "printf(\"" * 2> /dev/null
+ 1176  grep "printf(\"" * -rl
+ 1177  ls
+ 1178  grep "printf(\"" * -rl | xargs sed -i 's/printf(\"/"/"/printf(\"/g'
+ 1179  grep "printf(\"" * -rl | xargs sed -i 's/printf(\"/\/\/printf(\"/g'
+ 1180  grep -rn "printf(\"" * 2> /dev/null
+ 1181  motelist
+ 1182  cd ..
+ 1183  ls
+ 1184  find . -name sf
+ 1185  cd support/sdk/c/sf
+ 1186  ls
+ 1187  cat sflisten.c 
+ 1188  ls
+ 1189  gcc -o sflisten.c 
+ 1190  gcc sflisten.c 
+ 1191  ls
+ 1192  make clean
+ 1193  make
+ 1194  ls
+ 1195  cd nsl/
+ 1196  ls
+ 1197  cd tinyos-release-tinyos-2_1_2/
+ 1198  ls
+ 1199  cd apps/tests/TestRPL/udp/
+ 1200  ls
+ 1201  cd build/
+ 1202  ls
+ 1203  cd telosb/
+ 1204  ls
+ 1205  cat app.c
+ 1206  cat app.c | greap printf
+ 1207  cat app.c | grep printf
+ 1208  ls
+ 1209  grep "printf(\"" * -rl | xargs sed -i 's/printf(\"/\/\/printf(\"/g'
+ 1210  cat app.c | grep printf
+ 1211  cd ../../../../
+ 1212  ls
+ 1213  cd ..
+ 1214  cd tos/lib/net/blip/
+ 1215  ls
+ 1216  cat IPProtocolsP.nc 
+ 1217  cd ..
+ 1218  cd blip
+ 1219  cat IPProtocolsP.nc 
+ 1220  grep "printf(\"" * -rl | xargs sed -i 's/printf(\"/\/\/printf(\"/g'
+ 1221  vim IPProtocolsP.nc
+ 1222  ls
+ 1223  cd nsl/
+ 1224  ls
+ 1225  cd tinyos-release-tinyos-2_1_2/
+ 1226  ls
+ 1227  cd apps/tests/TestRPL/
+ 1228  ls
+ 1229  cd udp/
+ 1230  ls
+ 1231  exit
+ 1232  apt install terminator
+ 1233  cd /etc/apt/sources.list
+ 1234  vi /etc/apt/sources.list
+ 1235  apt update
+ 1236  vi /etc/apt/sources.list
+ 1237  apt update
+ 1238  ls
+ 1239  cd /etc/apt/
+ 1240  ls
+ 1241  cd sources.list
+ 1242  cd sources.list.d/
+ 1243  lls
+ 1244  ls
+ 1245  rm tinyprod-debian.list 
+ 1246  apt update
+ 1247  exit
+ 1248  cd
+ 1249  ls
+ 1250  pwd
+ 1251  vi .bashrc 
+ 1252  exit
+ 1253  ls
+ 1254  cd wo
+ 1255  ls
+ 1256  exit
+ 1257  cd
+ 1258  pwd
+ 1259  cd
+ 1260  ls
+ 1261  cd
+ 1262  ls
+ 1263  exit
+ 1264  cd
+ 1265  cd /home/goka/
+ 1266  ls
+ 1267  cd nsl/
+ 1268  ls
+ 1269  cd tinyos-release-tinyos-2_1_2/
+ 1270  ls
+ 1271  cd apps/tests/TestRPL/udp/
+ 1272  ls
+ 1273  make telsob blip
+ 1274  make telosb blip
+ 1275  exit
+ 1276  make telosb
+ 1277  motelist
+ 1278  make telosb install.1 bsl,/dev/ttyUSB0
+ 1279  make telosb install.2 bsl,/dev/ttyUSB1
+ 1280  cd ~/nsl/nsl_tinyos/nsl_tinyos/t1/tools/tinyos/c/sf
+ 1281  ./sf 9001 /dev/ttyUSB1 115200
+ 1282  cd ~/nsl/nsl_tinyos/nsl_tinyos/t1/tools/tinyos/c/sf
+ 1283  ls
+ 1284  cd ~
+ 1285  cd ~/nsl/nsl_tinyos/nsl_tinyos/t1/tools/tinyos/c/sf
+ 1286  exit
+ 1287  ./sf-listen localhost 9000
+ 1288  ls
+ 1289  ./sf
+ 1290  ./sf 9000 /dev/ttyUSB0 115200
+ 1291  ls
+ 1292  ./sfsne
+ 1293  ./sfsend
+ 1294  ./sfsend localhost 9000 01
+ 1295  ./sfsend localhost 9000 01 02
+ 1296  ./sfsend localhost 9000 01 02 03
+ 1297  ./sfsend localhost 9000 00 ff ff 00 02 04 22 06 00 02 00 9e
+ 1298  ./sfsend localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 01
+ 1299  ./sfsend localhost 9000 00 FF FF 00 00 04 22 06 00 01 00 01
+ 1300  ./sfsend localhost 9000 00 FF FF 00 00 04 22 06 00 02 00 01
+ 1301  ./sfsend localhost 9000 01 02
+ 1302  ./sfsend localhost 9000 01 02 03
+ 1303  rm -r hw1
+ 1304  ls
+ 1305  make telosb blip
+ 1306  make telosb install,1 bsl,/dev/ttyUSB0
+ 1307  make telosb install,2 bsl,/dev/ttyUSB1
+ 1308  cd ../../../
+ 1309  ls
+ 1310  cd tools/
+ 1311  ls
+ 1312  cd tinyos/c/
+ 1313  ls
+ 1314  cd sf/
+ 1315  ls
+ 1316  exit
+ 1317  make telosb
+ 1318  exit
+ 1319  make telosb install.1 bsl,/dev/ttyUSB0
+ 1320  make telosb install.2 bsl,/dev/ttyUSB1
+ 1321  cd ..
+ 1322  cd tools/
+ 1323  ls
+ 1324  cd tinyos/
+ 1325  ls
+ 1326  cd c/sf
+ 1327  ls
+ 1328  exit
+ 1329  cp -r t1/app/tests/TestRPL_2 TestRPL_command
+ 1330  cp -r t1/app/tests/TestRPL_2/ TestRPL_command
+ 1331  ls
+ 1332  cd t1/
+ 1333  cd ..
+ 1334  cp -r t1/apps/tests/TestRPL_2/ TestRPL_command
+ 1335  git add .
+ 1336  git commit -m "200825"
+ 1337  git push origin master
+ 1338  exit
+ 1339  cp sfsend.c mysend.c
+ 1340  exit
+ 1341  gcc -o mysend mysend.c sfsource.c
+ 1342  exit
+ 1343  vim mysend
+ 1344  vim mysend/c
+ 1345  chomd 777 mysend.c
+ 1346  chmod 777 mysend.c
+ 1347  exit
+ 1348  cp mysend.c mysend2.c
+ 1349  ls
+ 1350  vim mysend2.c
+ 1351  gcc -o mysend2 mysend2.c sfsource.c
+ 1352  vim mysend2.c
+ 1353  gcc -o mysend2 mysend2.c sfsource.c
+ 1354  ./mysend
+ 1355  ./mysend2
+ 1356  vim mysend2.c
+ 1357  ./mysend2
+ 1358  vim mysend2.c
+ 1359  gcc -o mysend2 mysend2.c sfsource.c
+ 1360  vim mysend2.c
+ 1361  gcc -o mysend2 mysend2.c sfsource.c
+ 1362  vim mysend2.c
+ 1363  gcc -o mysend2 mysend2.c sfsource.c
+ 1364  vim mysend2.c
+ 1365  gcc -o mysend2 mysend2.c sfsource.c
+ 1366  vim mysend2.c
+ 1367  gcc -o mysend2 mysend2.c sfsource.c
+ 1368  vim mysend2.c
+ 1369  gcc -o mysend2 mysend2.c sfsource.c
+ 1370  vim mysend2.c
+ 1371  gcc -o mysend2 mysend2.c sfsource.c
+ 1372  vim mysend2.c
+ 1373  gcc -o mysend2 mysend2.c sfsource.c
+ 1374  cd ../../../../
+ 1375  ls
+ 1376  cd ..
+ 1377  ls
+ 1378  cp t1/tools/tinyos/c/sf/mysend2.c mysend2.c
+ 1379  ls
+ 1380  git add .
+ 1381  git commit -m "200831"
+ 1382  git push origin master
+ 1383  git add .
+ 1384  git commit -m "200831"
+ 1385  git push origin master
+ 1386  ifconfig
+ 1387  ls
+ 1388  cd ..
+ 1389  ls
+ 1390  cd nsl_tinyos/`
+ 1391  cd nsl_tinyos/
+ 1392  ls
+ 1393  git status
+ 1394  git push
+ 1395  git pull
+ 1396  ls
+ 1397  cd ti
+ 1398  ls
+ 1399  cd t1/
+ 1400  ls
+ 1401  cd apps/tests/
+ 1402  ls
+ 1403  cd TestRPL_3
+ 1404  ls
+ 1405  cd ..
+ 1406  ls
+ 1407  cd TestRPL_3
+ 1408  ls
+ 1409  cat TestRPLAppC.nc 
+ 1410  ls
+ 1411  vim TestRPLC.nc 
+ 1412  cat TestRPLAppC.nc 
+ 1413  ls
+ 1414  vim TestRPLC.nc 
+ 1415  ls
+ 1416  caat TestRPLAppC.nc 
+ 1417  cat TestRPLAppC.nc 
+ 1418  ls
+ 1419  cat TestRPLAppC.nc 
+ 1420  vim TestRPLC.nc 
+ 1421  cat TestRPLC.nc 
+ 1422  vim TestRPLC.nc 
+ 1423  ./tinyos_multi 
+ 1424  motelist
+ 1425  ./tinyos_multi 
+ 1426  ls
+ 1427  vim TestRPLC.nc 
+ 1428  ./tinyos_multi 
+ 1429  vim TestRPLC.nc 
+ 1430  ./tinyos_multi 
+ 1431  vim TestRPLC.nc 
+ 1432  ./tinyos_multi 
+ 1433  vim TestRPLC.nc 
+ 1434  ./tinyos_multi 
+ 1435  vim TestRPLC.nc 
+ 1436  ./tinyos_multi 
+ 1437  vim TestRPLC.nc 
+ 1438  ./tinyos_multi 
+ 1439  vim TestRPLC.nc 
+ 1440  ./tinyos_multi 
+ 1441  vim TestRPLC.nc 
+ 1442  ./tinyos_multi 
+ 1443  vim TestRPLC.nc 
+ 1444  vim TestRPL.h 
+ 1445  vim TestRPLAppC.nc 
+ 1446  ./tinyos_multi 
+ 1447  vim TestRPLAppC.nc 
+ 1448  ls -al
+ 1449  rm .TestRPLAppC.nc.swp 
+ 1450  ls
+ 1451  vim TestRPLAppC.nc 
+ 1452  c
+ 1453  ./tinyos_multi 
+ 1454  vim TestRPLAppC.nc 
+ 1455  ./tinyos_multi 
+ 1456  ls
+ 1457  vim TestRPLC.nc 
+ 1458  vim TestRPLAppC.nc 
+ 1459  ./tinyos_multi 
+ 1460  vim TestRPLAppC.nc 
+ 1461  ./tinyos_multi 
+ 1462  vim TestRPLC.nc 
+ 1463  vim TestRPLAppC.nc 
+ 1464  ./tinyos_multi 
+ 1465  vim TestRPLAppC.nc 
+ 1466  ls
+ 1467  vim TestRPL.h
+ 1468  vim TestRPLAppC.nc 
+ 1469  ./tinyos_multi 
+ 1470  vim TestRPLAppC.nc 
+ 1471  ls
+ 1472  vim TestRPLAppC.nc 
+ 1473  ./tinyos_multi 
+ 1474  vim TestRPLAppC.nc 
+ 1475  ./tinyos_multi 
+ 1476  vim TestRPLAppC.nc 
+ 1477  ./tinyos_multi 
+ 1478  vim TestRPLAppC.nc 
+ 1479  ./tinyos_multi 
+ 1480  vim TestRPLAppC.nc 
+ 1481  ./tinyos_multi 
+ 1482  vim TestRPLAppC.nc 
+ 1483  ./tinyos_multi 
+ 1484  vim TestRPLAppC.nc 
+ 1485  vim TestRPL.h 
+ 1486  vim TestRPLAppC.nc 
+ 1487  vim TestRPLC.nc 
+ 1488  cat TestRPLC.nc | grep packet
+ 1489  vim TestRPLC.nc 
+ 1490  ./tinyos_multi 
+ 1491  vim TestRPLAppC.nc 
+ 1492  ./tinyos_multi 
+ 1493  vim TestRPLAppC.nc 
+ 1494  ./tinyos_multi 
+ 1495  vim TestRPLAppC.nc 
+ 1496  vim TestRPLC.nc 
+ 1497  ./tinyos_multi 
+ 1498  vim TestRPLC.nc 
+ 1499  ./tinyos_multi 
+ 1500  vim TestRPLC.nc 
+ 1501  vim TestRPLAppC.nc 
+ 1502  ./tinyos_multi 
+ 1503  vim TestRPLAppC.nc 
+ 1504  vim TestRPLC.nc 
+ 1505  ls
+ 1506  vim TestRPL.h 
+ 1507  vim TestRPLAppC.nc 
+ 1508  vim TestRPLC.nc 
+ 1509  ./tinyos_multi 
+ 1510  vim TestRPLC.nc 
+ 1511  vim TestRPLAppC.nc 
+ 1512  ls
+ 1513  vim TestRPLC.nc 
+ 1514  ./tinyos_multi 
+ 1515  c
+ 1516  ls
+ 1517  vim TestRPLAppC.nc 
+ 1518  vim TestRPLC.nc 
+ 1519  vim TestRPLAppC.nc 
+ 1520  ./tinyos_multi 
+ 1521  ls
+ 1522  cat Makefile 
+ 1523  vim Makefile 
+ 1524  vim TestRPLAppC.nc 
+ 1525  ./tinyos_multi 
+ 1526  motelist
+ 1527  ./tinyos_multi 
+ 1528  make telosb blip install,3 bsl,/dev/ttyUSB2
+ 1529  ./tinyos_multi 
+ 1530  motelist
+ 1531  make telosb blip install,3 bsl,/dev/ttyUSB2
+ 1532  ./tinyos_multi 
+ 1533  ls
+ 1534  vim TestRPLC.nc 
+ 1535  ls
+ 1536  vim TestRPLAppC.nc 
+ 1537  ./tinyos_multi 
+ 1538  vim TestRPLC.nc 
+ 1539  ./tinyos_multi 
+ 1540  cd ..
+ 1541  ls
+ 1542  cd ..
+ 1543  ls
+ 1544  cp -r t1/apps/tests/TestRPL_3 TestRPL_AMReceive
+ 1545  git add .
+ 1546  git commit -m "200907"
+ 1547  git push origin master
+ 1548  ls
+ 1549  cd t1/
+ 1550  ls
+ 1551  cd apps/
+ 1552  ls
+ 1553  cd tests/
+ 1554  ls
+ 1555  cp ../../../TestRPL_mysend/ TestRPL_4
+ 1556  cp -r ../../../TestRPL_mysend/ TestRPL_4
+ 1557  cd TestRPL_4
+ 1558  ls
+ 1559  ./tinyos_multi 
+ 1560  ls
+ 1561  cat tinyos_multi 
+ 1562  cd ..
+ 1563  ls
+ 1564  cd tinyos-main
+ 1565  ls
+ 1566  cd apps/
+ 1567  cd tests/
+ 1568  ls
+ 1569  cd TestRPL/
+ 1570  make telosb install,1 bsl,/dev/ttyUSB0
+ 1571  make telosb install,2 bsl,/dev/ttyUSB1
+ 1572  make telosb install,3 bsl,/dev/ttyUSB2
+ 1573  cd ..
+ 1574  ls
+ 1575  cd ..
+ 1576  ls
+ 1577  cd apps/testsTestRPL
+ 1578  cd apps/tests/TestRPL/
+ 1579  ls
+ 1580  cd udp/
+ 1581  ls
+ 1582  make telosb install,1 bsl,/dev/ttyUSB0
+ 1583  make telosb install,2 bsl,/dev/ttyUSB1
+ 1584  make telosb install,3 bsl,/dev/ttyUSB2
+ 1585  make telosb blip
+ 1586  cd ..
+ 1587  ls
+ 1588  cd ..
+ 1589  ls
+ 1590  cd tosthreads/
+ 1591  cd ..
+ 1592  cd tools/
+ 1593  ./Bootstrap
+ 1594  ./configure
+ 1595  make
+ 1596  ./configure
+ 1597  make
+ 1598  sudo make install
+ 1599  cd ..
+ 1600  cd apps/
+ 1601  ls
+ 1602  cd tests/
+ 1603  cd TestRPL/
+ 1604  cd udp/
+ 1605  make telosb
+ 1606  cd ..
+ 1607  ls
+ 1608  cd ..
+ 1609  cd tools/
+ 1610  make
+ 1611  cd ..
+ 1612  ls
+ 1613  cd ..
+ 1614  cd ts
+ 1615  ls
+ 1616  cd nsl/
+ 1617  ls
+ 1618  cd nsl_tinyos/
+ 1619  ls
+ 1620  cd nsl_tinyos/
+ 1621  ls
+ 1622  cd t1/
+ 1623  ls
+ 1624  cd tes
+ 1625  cd apps/tests/
+ 1626  cd TestRPL_4
+ 1627  ls
+ 1628  cd ..
+ 1629  ls
+ 1630  cd TestRPL_4
+ 1631  ls
+ 1632  cd TestRPL_3
+ 1633  ls
+ 1634  cd ..
+ 1635  rm -r TestRPL_3
+ 1636  ls
+ 1637  vim TestRPLC.nc 
+ 1638  ./tinyos_multi 
+ 1639  vim TestRPLC.nc 
+ 1640  ./tinyos_multi 
+ 1641  ls
+ 1642  vim TestRPLAppC.nc 
+ 1643  vim TestRPLC.nc 
+ 1644  vim TestRPLAppC.nc 
+ 1645  vim TestRPLC.nc 
+ 1646  motelist
+ 1647  ./tinyos_multi 
+ 1648  grep -r "ForwadingTable"
+ 1649  grep -r "ForwardingTable"
+ 1650  ls
+ 1651  cat TestRPLC.nc | grep -r "ForwardingTable"
+ 1652  cat TestRPLC.nc | grep "ForwardingTable"
+ 1653  ./tinyos_multi 
+ 1654  vim TestRPLC.nc 
+ 1655  vim TestRPLAppC.nc 
+ 1656  vim TestRPLC.nc 
+ 1657  ./tinyos_multi 
+ 1658  vim TestRPLC.nc 
+ 1659  ./tinyos_multi 
+ 1660  vim TestRPLAppC.nc 
+ 1661  ./tinyos_multi 
+ 1662  vim TestRPLAppC.nc 
+ 1663  vim TestRPLC.nc 
+ 1664  ./tinyos_multi 
+ 1665  ls
+ 1666  vim Makefile 
+ 1667  ./tinyos_multi 
+ 1668  vim Makefile 
+ 1669  ./tinyos_multi 
+ 1670  make telosb blip isntall,3 bsl,/dev/ttyUSB2
+ 1671  make telosb blip install,3 bsl,/dev/ttyUSB2
+ 1672  vim TestRPLC.nc 
+ 1673  ./tinyos_multi 
+ 1674  vim TestRPLC.nc 
+ 1675  ./tinyos_multi 
+ 1676  make telosb blip install,3 bsl,/dev/ttyUSB2
+ 1677  vim TestRPLC.nc 
+ 1678  ./tinyos_multi 
+ 1679  make telosb blip install,3 bsl,/dev/ttyUSB2
+ 1680  vim Makefile 
+ 1681  ./tinyos_multi 
+ 1682  vim Makefile 
+ 1683  ./tinyos_multi 
+ 1684  vim TestRPLC.nc 
+ 1685  ./tinyos_multi 
+ 1686  make telosb install,3 bsl,/dev/ttyUSB2
+ 1687  vim TestRPLC.nc 
+ 1688  ./tinyos_multi 
+ 1689  vim TestRPLC.nc 
+ 1690  ./tinyos_multi 
+ 1691  vim TestRPLAppC.nc 
+ 1692  vim TestRPLC.nc 
+ 1693  ./tinyos_multi 
+ 1694  vim TestRPLC.nc 
+ 1695  ./tinyos_multi 
+ 1696  vim TestRPLC.nc 
+ 1697  vim TestRPLApp.nc 
+ 1698  vim TestRPLAppC.nc 
+ 1699  ./tinyos_multi 
+ 1700  vim TestRPLAppC.nc 
+ 1701  vim TestRPLC.nc 
+ 1702  ./tinyos_multi 
+ 1703  vim TestRPLC.nc 
+ 1704  ./tinyos_multi 
+ 1705  vim TestRPLAppC.nc 
+ 1706  ./tinyos_multi 
+ 1707  vim TestRPLAppC.nc 
+ 1708  ./tinyos_multi 
+ 1709  vim TestRPLC.nc 
+ 1710  cat TestRPLC.nc 
+ 1711  ls
+ 1712  vim TestRPLC.nc 
+ 1713  ./tinyos_multi 
+ 1714  vim TestRPLC.nc 
+ 1715  ./tinyos_multi 
+ 1716  vim TestRPLC.nc 
+ 1717  ls
+ 1718  cd ..
+ 1719  cp -r TestRPL_4 TestRPL_5
+ 1720  cd TestRPL_5
+ 1721  ls
+ 1722  vim TestRPLC.nc 
+ 1723  ls
+ 1724  vim TestRPL.h
+ 1725  vim TestRPLC.nc 
+ 1726  ./tinyos_multi 
+ 1727  vim TestRPLC.nc 
+ 1728  ./tinyos_multi 
+ 1729  vim TestRPLC.nc 
+ 1730  ./tinyos_multi 
+ 1731  make telosb install,3 bsl,/dev/ttyUSB2
+ 1732  vim TestRPLC.nc 
+ 1733  cat TestRPLC.nc 
+ 1734  vim TestRPLC.nc 
+ 1735  cat TestRPLC.nc 
+ 1736  vim TestRPLC.nc 
+ 1737  ./tinyos_multi 
+ 1738  make telosb install,3 bsl,/dev/ttyUSB2
+ 1739  history
+ 1740  history > 1

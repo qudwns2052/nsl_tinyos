@@ -523,6 +523,8 @@ implementation{
   event void IP_DIO.recv(struct ip6_hdr *iph, void *payload,
                          size_t len, struct ip6_metadata *meta) {
     struct dio_base_t *dio = (struct dio_base_t *)payload;
+
+
     if (!running) return;
 
     if (I_AM_ROOT) return;
